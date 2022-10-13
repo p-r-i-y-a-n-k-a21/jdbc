@@ -1,16 +1,29 @@
 package streamassignment;
-
-import java.util.ArrayList;
-
-public class ass2 {
+   import java.util.List;
+   import java.util.ArrayList;
+   public class ass1 {
     public static void main(String[] args) {
-        ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(12);
-        arr.add(13);
-        arr.add(14);
-        arr.add(2);
-        int total =(  arr.stream().filter(s->s%2==0).reduce(0,(ans,s)-> ans+s));
-        System.out.println(total);
+        List<Product> productsList = new ArrayList<>();
+        productsList.add(new Product("HP ",25000f));
+        productsList.add(new Product("Dell ",35000f));
+        productsList.add(new Product("Lenevo ",28000f));
+        productsList.add(new Product("Sony ",28000f));
+        productsList.add(new Product("Apple ",35000f));
+        System.out.println(
+                productsList.stream()
+                        .filter(p -> p.price > 30000)
+                        .map(p->p.price)
+                        .reduce((float) 0, (v1, v2) -> v1 + v2));
     }
 }
+    class Product{
+
+        String name;
+        float price;
+        public Product( String name, float price) {
+
+            this.name = name;
+            this.price = price;
+        }
+    }
 
