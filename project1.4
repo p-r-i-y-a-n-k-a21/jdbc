@@ -24,11 +24,11 @@ public class productC {
 	
 	public static void main(String[] args) {
 		ArrayList<productT> al = new ArrayList<productT>();
-		al.add(new productT(23456,"Iphone",57000.0));
-		al.add(new productT(45678,"Iphone13",97000.0));
-		al.add(new productT(12345,"Samsung S21",37000.0));
-		al.add(new productT(23456,"Nokia",17000.0));
-		al.add(new productT(34567,"Oppo",7000.0));
+		al.add(new productT(20,"mobile",20000.0));
+		al.add(new productT(30,"mobile1",30000.0));
+		al.add(new productT(40,"mobile2",40000.0));
+		al.add(new productT(50,"mobile3",50000.0));
+		al.add(new productT(60,"mobile4",70000.0));
 		
 		al.stream().forEach((a)->System.out.println(a.name+" "+a.orderid+" "+a.price)); 
 		System.out.println(al.stream().map(productT::getprice).collect(Collectors.toList()));
