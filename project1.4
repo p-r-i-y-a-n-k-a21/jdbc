@@ -1,0 +1,37 @@
+package streamassignment ;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+class ProductT {
+	int orderid;
+	String name;
+	Double price;
+	
+ public	ProductTest(int orderid, String name, Double price){
+		this.orderid=orderid;
+		this.name=name;
+		this.price=price;
+	}
+
+public Double getprice() {
+	return price;
+}
+
+}
+
+public class productC {
+	
+	public static void main(String[] args) {
+		ArrayList<productT> al = new ArrayList<productT>();
+		al.add(new productT(23456,"Iphone",57000.0));
+		al.add(new productT(45678,"Iphone13",97000.0));
+		al.add(new productT(12345,"Samsung S21",37000.0));
+		al.add(new productT(23456,"Nokia",17000.0));
+		al.add(new productT(34567,"Oppo",7000.0));
+		
+		al.stream().forEach((a)->System.out.println(a.name+" "+a.orderid+" "+a.price)); 
+		System.out.println(al.stream().map(productT::getprice).collect(Collectors.toList()));
+	}
+
+}
