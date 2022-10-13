@@ -1,0 +1,29 @@
+package streamassignment;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+public class ass3 {
+    public static void main(String[] args) {
+        List<employee> L = new ArrayList<employee>();
+        L.add(new employee("PIKACHU ",25000));
+        L.add(new employee("OSWALD ",35000));
+        L.add(new employee("SINCHAN",28000));
+        L.add(new employee(" DOREMON",28000));
+        L.add(new employee("NOBITA",90000));
+        System.out.println( L.stream().map(p->p.salary).sorted().collect(Collectors.toList()));
+        System.out.println( L.stream().map(p->p.name).sorted().collect(Collectors.toList()));
+
+    }
+}
+class employee {
+
+    String name;
+    double salary;
+    public employee(String name, double salary) {
+
+        this.name = name;
+        this.salary = salary;
+    }
+}
