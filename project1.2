@@ -1,0 +1,16 @@
+package streamassignment;
+
+import java.util.ArrayList;
+
+public class ass2 {
+    public static void main(String[] args) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(12);
+        arr.add(13);
+        arr.add(14);
+        arr.add(2);
+        int total =(  arr.stream().filter(s->s%2==0).reduce(0,(ans,s)-> ans+s));
+        System.out.println(total);
+    }
+}
+
