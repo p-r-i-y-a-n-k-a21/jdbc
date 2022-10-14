@@ -1,0 +1,10 @@
+1) db.restaurants.find({borough:"Bronx"});
+==>output - mongo 1
+2) db.restaurants.find({borough:"Bronx"}).pretty().limit(5);
+==>output - mongo 5
+3)db.restaurants.find({grades:{$elemMatch:{score:{$gt:90}}}});
+==> output -mongo 2
+4)db.restaurants.find(grades:{$elemMatch:{score:{$gt:80,$lt:100}}}}).pretty();
+==>output -mongo 3
+5)db.restaurants.find({$and:[{cuisine:{$ne:"American"}},{"grade.score:{$gt:70}},{"address.coord":{$lt: -65.754168}}]});
+==>output - mongo 4
